@@ -12,13 +12,126 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Frontend Mentor | [Challenge Name Here]</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Barlow Semi Condensed", sans-serif;
+        background-color: hsl(210, 46%, 95%);
+      }
+
+      /* =============
+        TYPOGRAPHY
+      ============ */
+
+      .grid-item__author-name {
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 1em;
+        margin-bottom: 0.4em;
+      }
+
+      .grid-item__author-status {
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 1em;
+        opacity: 0.5;
+      }
+
+      .grid-item__highlight {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: auto;
+        margin-bottom: 1em;
+        position: relative;
+        z-index: 2;
+      }
+
+      .grid-item__quote {
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 1.385em;
+        opacity: 0.7;
+      }
+
+      /* =============
+        LAYOUT
+      ============ */
+      main {
+        display: grid;
+        row-gap: 2rem;
+        margin: 15% 5%;
+      }
+
+      .grid-item__quote-img {
+        position: absolute;
+        right: 10%;
+        top: 0;
+        z-index: 0;
+      }
+
+      .grid-item__author {
+        display: flex;
+        margin-bottom: 1.5rem;
+      }
+
+      .grid-item__author-image {
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 50%;
+      }
+
+      .grid-item__author-text {
+        margin-left: 1.5rem;
+      }
+
+      .grid-item {
+        padding: 3rem 3rem 3.5rem 3rem;
+        border-radius: 1em;
+      }
+
+      .grid-item--bg-purple {
+        background-color: hsl(263, 55%, 52%);
+        color: hsl(0, 0%, 100%);
+        position: relative;
+      }
+
+      .grid-item--bg-gray-blue {
+        background-color: hsl(217, 19%, 35%);
+        color: hsl(0, 0%, 100%);
+      }
+
+      .grid-item--bg-white {
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(217, 19%, 35%);
+      }
+
+      .grid-item--bg-black-blue {
+        background-color: hsl(219, 29%, 14%);
+        color: hsl(0, 0%, 100%);
+      }
+
       .attribution {
-        font-size: 11px;
+        font-size: 1.1rem;
         text-align: center;
+        margin-bottom: 2.5em;
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
@@ -28,14 +141,21 @@
   <body>
     <main>
       <div class="grid-item grid-item--bg-purple">
+        <img
+          src="./images/bg-pattern-quotation.svg"
+          alt="quote decoration image"
+          class="grid-item__quote-img"
+        />
         <div class="grid-item__author">
           <img
             src="./images/image-daniel.jpg"
             alt="daniel clifford profile image"
             class="grid-item__author-image"
           />
-          <p class="grid-item__author-name">Daniel Clifford</p>
-          <p class="grid-item__author-status">Verified Graduate</p>
+          <div class="grid-item__author-text">
+            <p class="grid-item__author-name">Daniel Clifford</p>
+            <p class="grid-item__author-status">Verified Graduate</p>
+          </div>
         </div>
         <h2 class="grid-item__highlight">
           I received a job offer mid-course, and the subjects I learned were
@@ -59,8 +179,10 @@
             alt="jonathan walters profile picture"
             class="grid-item__author-image"
           />
-          <p class="grid-item__author-name">Jonathan Walters</p>
-          <p class="grid-item__author-status">Verified Graduate</p>
+          <div class="grid-item__author-text">
+            <p class="grid-item__author-name">Jonathan Walters</p>
+            <p class="grid-item__author-status">Verified Graduate</p>
+          </div>
         </div>
         <h2 class="grid-item__highlight">
           The team was very supportive and kept me motivated
@@ -78,8 +200,10 @@
             alt="jeanette harmon profile picture"
             class="grid-item__author-image"
           />
-          <p class="grid-item__author-name">Jeanette Harmon</p>
-          <p class="grid-item__author-status">Verified Graduate</p>
+          <div class="grid-item__author-text">
+            <p class="grid-item__author-name">Jeanette Harmon</p>
+            <p class="grid-item__author-status">Verified Graduate</p>
+          </div>
         </div>
         <h2 class="grid-item__highlight">
           An overall wonderful and rewarding experience
@@ -96,8 +220,10 @@
             alt="patrick abrams profile picture"
             class="grid-item__author-image"
           />
-          <p class="grid-item__author-name">Patrick Abrams</p>
-          <p class="grid-item__author-status">Verified Graduate</p>
+          <div class="grid-item__author-text">
+            <p class="grid-item__author-name">Patrick Abrams</p>
+            <p class="grid-item__author-status">Verified Graduate</p>
+          </div>
         </div>
         <h2 class="grid-item__highlight">
           Awesome teaching support from TAs who did the bootcamp themselves.
@@ -120,8 +246,10 @@
             alt="kira whittle profile picture"
             class="grid-item__author-image"
           />
-          <p class="grid-item__author-name">Kira Whittle</p>
-          <p class="grid-item__author-status">Verified Graduate</p>
+          <div class="grid-item__author-text">
+            <p class="grid-item__author-name">Kira Whittle</p>
+            <p class="grid-item__author-status">Verified Graduate</p>
+          </div>
         </div>
         <h2 class="grid-item__highlight">
           Such a life-changing experience. Highly recommended!
@@ -146,7 +274,7 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="https://github.com/jacobntran">Jacob Tran</a>.
     </div>
   </body>
 </html>
